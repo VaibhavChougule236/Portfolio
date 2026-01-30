@@ -1,45 +1,110 @@
-const toggle = document.getElementById("themeToggle");
-const body = document.body;
 
-if (localStorage.getItem("theme") === "dark") {
-  body.classList.add("dark");
-}
 
-toggle.addEventListener("click", () => {
-  body.classList.toggle("dark");
-  localStorage.setItem("theme", body.classList.contains("dark") ? "dark" : "light");
+const root = document.documentElement;
+const menuToggle = document.getElementById("menuToggle");
+const nav = document.getElementById("nav");
+const themeToggle = document.getElementById("themeToggle");
+const contactForm = document.getElementById("contact-form");
+
+
+menuToggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
 });
 
-const roles = [
-  "Java Backend Developer",
-  "Full Stack Learner",
-  "Problem Solver",
-  "Software Engineering Enthusiast"
-];
+document.querySelectorAll(".nav a").forEach(link => {
+    link.addEventListener("click", () => {
+        nav.classList.remove("active");
+    });
+});
 
-let roleIndex = 0;
-let charIndex = 0;
-const animatedText = document.getElementById("animatedText");
 
-function type() {
-  if (charIndex < roles[roleIndex].length) {
-    animatedText.textContent += roles[roleIndex][charIndex];
-    charIndex++;
-    setTimeout(type, 100);
-  } else {
-    setTimeout(erase, 1500);
-  }
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme) {
+    root.setAttribute("data-theme", savedTheme);
 }
 
-function erase() {
-  if (charIndex > 0) {
-    animatedText.textContent = roles[roleIndex].substring(0, charIndex - 1);
-    charIndex--;
-    setTimeout(erase, 60);
-  } else {
-    roleIndex = (roleIndex + 1) % roles.length;
-    setTimeout(type, 400);
-  }
-}
+themeToggle.addEventListener("click", () => {
+    const nextTheme =
+        root.getAttribute("data-theme") === "dark" ? "light" : "dark";
 
-type();
+    root.setAttribute("data-theme", nextTheme);
+    localStorage.setItem("theme", nextTheme);
+});
+
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav a");
+
+const navObserver = new IntersectionObserver(
+    entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => {
+                    link.classList.toggle(
+                        "active",
+                        link.getAttribute("href").slice(1) === entry.target.id
+                    );
+                });
+            }
+        });
+    },
+    {
+        threshold: 0.5
+    }
+);
+
+sections.forEach(section => navObserver.observe(section));
+
+
+const revealObserver = new IntersectionObserver(
+    entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    },
+    {
+        threshold: 0.1
+    }
+);
+
+sections.forEach(section => {
+    section.classList.add("section-reveal");
+    revealObserver.observe(section);
+});
+
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+
+(function () {
+    emailjs.init("Gs0ZXQu9DDewzeiHv"); 
+})();
+
+contactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const submitBtn = contactForm.querySelector("button");
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+
+    emailjs.sendForm(
+        "service_rus3ke9",
+        "template_hnivty7",
+        this
+    ).then(
+        () => {
+            alert("✅ Message sent successfully!");
+            contactForm.reset();
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Send Message";
+        },
+        () => {
+            alert("❌ Failed to send message. Please try again.");
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Send Message";
+        }
+    );
+});

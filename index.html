@@ -1,131 +1,588 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vaibhav Chougule | Portfolio</title>
-  <link rel="stylesheet" href="assets/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark light">
+
+    <title>Vaibhav Chougule | Java Full Stack Engineer</title>
+
+    <meta name="description"
+        content="Vaibhav Chougule | Java Backend & Full Stack Engineer specializing in Spring Boot, Microservices, AWS, and scalable backend systems.">
+    <meta name="keywords"
+        content="Java Developer, Backend Engineer, Spring Boot, Full Stack Developer, Microservices, AWS">
+    <meta name="author" content="Vaibhav Chougule">
+
+    <link rel="icon" href="assets/favicon-32x32.png" sizes="any">
+    <link rel="manifest" href="assets/site.webmanifest">
+
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="scripts/script.js" defer></script>
 </head>
+
 <body>
 
-<header>
-  <nav>
-    <div class="logo">Vaibhav</div>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#achievements">Achievements</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button id="themeToggle">🌙</button>
-  </nav>
-</header>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="#hero" class="logo">Vaibhav</a>
 
-<section class="hero">
-  <h1>Hi, I'm Vaibhav Chougule</h1>
-  <h2 id="animatedText"></h2>
-  <p>
-    Passionate developer focused on building scalable, secure, and user-friendly applications.
-  </p>
-</section>
+            <nav class="nav" id="nav">
+                <a href="#hero" class="active">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#achievements">Achievements</a>
+                <a href="#contact">Contact</a>
+            </nav>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    I am a final-year engineering student and a passionate software developer with a strong
-    foundation in Java, Spring Boot, and full-stack web development.
-    I enjoy solving real-world problems, writing clean code, and learning new technologies.
-  </p>
-  <p>
-    My primary focus is backend development, but I also have hands-on experience in frontend
-    technologies like HTML, CSS, and JavaScript to build complete applications.
-  </p>
-</section>
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <span class="sun">☀</span>
+                    <span class="moon">☾</span>
+                </button>
 
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="skills-grid">
-    <div class="skill">HTML</div>
-    <div class="skill">CSS</div>
-    <div class="skill">JavaScript</div>
-    <div class="skill">Java</div>
-    <div class="skill">Spring Boot</div>
-    <div class="skill">REST APIs</div>
-    <div class="skill">SQL</div>
-    <div class="skill">Git & GitHub</div>
-  </div>
-</section>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
 
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>Distributed Payment Processing System</h3>
-      <p>
-        A secure and scalable payment integration system built using Java and Spring Boot.
-        Implements authentication, encryption, and microservices architecture.
-      </p>
-      <span>Tech: Java, Spring Boot, Microservices</span>
-    </div>
+    <main>
 
-    <div class="card">
-      <h3>AI Blogging Platform</h3>
-      <p>
-        A blogging platform with features like content creation, user authentication,
-        and AI-based text summarization and translation.
-      </p>
-      <span>Tech: Java, Spring Boot, HTML, CSS, JS</span>
-    </div>
+        <section id="hero">
+            <div class="hero-grid">
 
-    <div class="card">
-      <h3>Student Management System</h3>
-      <p>
-        A full-stack web application to manage students, courses, and roles with
-        authentication and authorization.
-      </p>
-      <span>Tech: Java, Spring Boot, MySQL</span>
-    </div>
-  </div>
-</section>
+                <div class="hero-left">
+                    <span class="hero-chip">Java Backend / Full Stack Engineer</span>
 
-<section id="achievements">
-  <h2>Achievements</h2>
-  <ul class="achievement-list">
-    <li>⭐ 5-Star Java Programmer on HackerRank</li>
-    <li>✅ Solved 500+ Data Structures & Algorithms problems</li>
-    <li>🏆 Winner of college-level coding competitions</li>
-    <li>📚 Strong academic record with consistent top performance</li>
-  </ul>
-</section>
+                    <h1 class="hero-title">
+                        Hi, I’m <span class="accent">Vaibhav</span>
+                    </h1>
 
-<section id="contact">
-  <h2>Contact Me</h2>
-  <div class="contact-container">
-    <div class="contact-info">
-      <p>Email: vaibhavchougule@example.com</p>
-      <p>Location: India</p>
-    </div>
 
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+                    <p class="animated-text">
+                        <span class="text-wrapper">
+                            <span>Java Full Stack Developer</span>
+                            <span>Java Developer</span>
+                            <span>Backend Engineer</span>
+                            <span>Problem Solver</span>
+                        </span>
+                    </p>
 
-    <div class="socials">
-      <a href="#" target="_blank">LinkedIn</a>
-      <a href="#" target="_blank">GitHub</a>
-      <a href="#" target="_blank">Twitter</a>
-    </div>
-  </div>
-</section>
+                    <div class="about-content">
 
-<footer>
-  <p>© 2026 Vaibhav Chougule | All Rights Reserved</p>
-</footer>
+                        <p>
+                            I’m a Java Full Stack Engineer with a strong backend foundation, experienced
+                            in building secure and scalable web applications using Spring Boot, while
+                            also developing clean and responsive user interfaces with HTML, CSS, and
+                            JavaScript.
 
-<script src="scripts/script.js"></script>
+                        </p>
+
+                        <p>
+                            Through internships and real-world projects, I’ve designed RESTful APIs,
+                            implemented authentication and authorization using Spring Security, and
+                            built database-driven applications with a focus on clean architecture,
+                            security, and long-term reliability.
+                        </p>
+
+                        <p>
+                            I actively contribute to open-source projects, build end-to-end systems,
+                            and continuously strengthen my problem-solving skills through data
+                            structures, algorithms, and backend-focused system design practice.
+                        </p>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a href="https://www.linkedin.com/in/vaibhavchougule124/" target="_blank" class="btn-outline">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                            <span>LinkedIn</span>
+                        </a>
+
+                        <a href="assets/Resume/Vaibhav_Chougule_SDE1_Resume.pdf" target="_blank" class="btn-outline"
+                            rel="noopener noreferrer">
+                            <i class="fa-solid fa-file-arrow-down"></i>
+                            <span>Resume</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-right">
+                    <div class="profile-wrapper">
+                        <img src="assets/Vaibhav.jpg" width="280" height="280" loading="lazy" decoding="async"
+                            alt="Vaibhav Chougule" class="profile-img">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================= PROJECTS ================= -->
+        <section id="projects">
+
+            <div class="projects-wrapper">
+
+                <div class="projects-header">
+                    <h2 class="section-title">Projects</h2>
+                    <p>
+                        A selection of projects showcasing my experience with backend systems,
+                        full-stack development, and production-ready engineering practices.
+                    </p>
+                </div>
+
+                <div class="projects-grid">
+
+                    <article class="project-card">
+
+                        <!-- Image -->
+                        <div class="image-preview">
+                            <img src="assets/Personal Portfolio Website.png" alt="Personal Portfolio Website">
+                        </div>
+
+                        <!-- Meta -->
+                        <div class="project-meta">
+                            <span class="project-tag">Frontend</span>
+                            <span class="project-tag">Deployed</span>
+                        </div>
+
+                        <h3>Personal Portfolio Website</h3>
+
+                        <p>
+                            Designed and developed a fully responsive personal portfolio to showcase my
+                            projects, technical skills, and professional journey. Implemented clean UI,
+                            smooth light/dark theme transitions, and optimized layouts for all screen sizes.
+                            Deployed with a custom domain to ensure fast performance and high availability.
+                        </p>
+
+                        <ul class="project-tech">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>Responsive Design</li>
+                            <li>Netlify</li>
+                        </ul>
+
+                        <div class="project-actions">
+                            <a href="https://vaibhavchougule.vercel.app/" target="_blank" class="project-link">
+                                Live Website
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Project 1 -->
+                    <article class="project-card">
+
+                        <!-- Image -->
+                        <div class="image-preview">
+                            <img src="assets/Payment_Integration_Project.png" alt="Payment Integration System">
+                        </div>
+
+                        <!-- Meta -->
+                        <div class="project-meta">
+                            <span class="project-tag">Microservices</span>
+                            <span class="project-tag">Deployed</span>
+                        </div>
+
+                        <h3>Payment Integration System</h3>
+
+                        <p>
+                            Designed and implemented a microservices-based payment system
+                            handling secure transaction flows and third-party payment
+                            integrations. Built REST APIs with Spring Boot and Spring Security,
+                            implemented authentication using HMAC-based validation, and deployed
+                            services on AWS using Docker to ensure scalability and reliability.
+                        </p>
+
+
+                        <ul class="project-tech">
+                            <li>Java</li>
+                            <li>Spring Boot</li>
+                            <li>Spring Security</li>
+                            <li>AWS</li>
+                            <li>Docker</li>
+                        </ul>
+
+                        <div class="project-actions">
+                            <a href="https://github.com/VaibhavChougule236/Core-Payment-Integration-System-Microservices-Based-Backend-Project"
+                                target="_blank" class="project-link">
+                                View Code
+                            </a>
+                            <span class="project-link muted">Deployed on AWS</span>
+                        </div>
+
+
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="project-card">
+
+                        <!-- Image -->
+                        <div class="image-preview">
+                            <img src="assets/Screenshot 2025-12-30 213949.png" alt="AI Blogging Platform">
+                        </div>
+
+                        <!-- Meta -->
+                        <div class="project-meta">
+                            <span class="project-tag">Full Stack</span>
+                            <span class="project-tag">Microservices</span>
+
+                        </div>
+
+                        <h3>AI-Integrated Blogging Platform</h3>
+
+                        <p>
+                            Developed a full-stack blogging platform using a microservices-based
+                            architecture with role-based access control, OAuth2 authentication,
+                            and AI-powered features such as content summarization and translation.
+                            Designed independent backend services to ensure scalability, security,
+                            and clear separation of responsibilities across the system.
+                        </p>
+
+
+                        <ul class="project-tech">
+                            <li>Java</li>
+                            <li>Spring Boot</li>
+                            <li>MySQL</li>
+                            <li>OAuth2</li>
+                            <li>OpenAI</li>
+                        </ul>
+
+                        <div class="project-actions">
+                            <a href="https://github.com/VaibhavChougule236/AI-Integrated-Java-Full-Stack-Blog-Web"
+                                target="_blank" class="project-link">
+                                View Code
+                            </a>
+                            <span class="project-link muted">Microservices Architecture</span>
+                        </div>
+
+
+                    </article>
+
+                    <article class="project-card">
+
+                        <!-- Image -->
+                        <div class="image-preview">
+                            <img src="assets/Contact_Saving_web.png" alt="Smart Contact Manager Application">
+                        </div>
+
+                        <!-- Meta -->
+                        <div class="project-meta">
+                            <span class="project-tag">Monolith</span>
+                            <span class="project-tag">Full Stack</span>
+                        </div>
+
+                        <h3>Smart Contact Manager</h3>
+
+                        <p>
+                            Built a secure monolithic Java full-stack application for managing personal and
+                            professional contacts with authentication. Implemented
+                            user registration, login, contact CRUD operations, search functionality, and
+                            profile management using Spring Boot and Spring Security. Focused on clean MVC
+                            architecture, data validation, and scalable backend design.
+                        </p>
+
+                        <ul class="project-tech">
+                            <li>Java</li>
+                            <li>Spring Boot</li>
+                            <li>Spring Security</li>
+                            <li>Hibernate</li>
+                            <li>MySQL</li>
+                            <li>Thymeleaf</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                        </ul>
+
+                        <div class="project-actions">
+                            <a href="https://github.com/VaibhavChougule236/Smart-Contact-Manager" target="_blank"
+                                class="project-link">
+                                View Code
+                            </a>
+                            <span class="project-link muted">Secure Application</span>
+                        </div>
+
+                    </article>
+
+
+                    <!-- Project 4 -->
+                    <article class="project-card">
+
+                        <!-- Image -->
+                        <div class="image-preview">
+                            <img src="assets/Weather_web.png" alt="Weather Forecast Web Application">
+                        </div>
+
+                        <!-- Meta -->
+                        <div class="project-meta">
+                            <span class="project-tag">Monolith</span>
+                            <span class="project-tag">Full Stack</span>
+                        </div>
+
+                        <h3>Weather Forecast Web Application</h3>
+
+                        <p>
+                            Developed a monolithic Java full-stack web application that provides real-time
+                            weather information using OpenWeather API. Implemented REST-based API integration
+                            for fetching current weather and forecasts, handled server-side processing with
+                            Spring Boot, and built a responsive UI for seamless user experience. Focused on
+                            clean architecture, error handling, and maintainable code structure.
+                        </p>
+
+                        <ul class="project-tech">
+                            <li>Java</li>
+                            <li>Spring Boot</li>
+                            <li>REST API</li>
+                            <li>OpenWeather API</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+
+                        <div class="project-actions">
+                            <a href="https://github.com/VaibhavChougule236/Weather" target="_blank"
+                                class="project-link">
+                                View Code
+                            </a>
+                            <span class="project-link muted">API Integrated</span>
+                        </div>
+
+                    </article>
+
+
+                    <!-- Project 5 -->
+                    <article class="project-card">
+
+                        <!-- Image -->
+                        <div class="image-preview">
+                            <img src="assets/BMS.png" alt="BMS" class="cert-img">
+                        </div>
+
+                        <!-- Meta -->
+                        <div class="project-meta">
+                            <span class="project-tag">Core Java</span>
+                            <span class="project-tag muted">Desktop Application</span>
+                        </div>
+
+                        <h3>Bank Management System</h3>
+
+                        <p>
+                            Built a Java-based banking system implementing core business
+                            workflows such as account management and transaction processing.
+                            Focused on data validation, transactional integrity, and clean
+                            separation of business logic using JDBC and SQL.
+                        </p>
+
+                        <ul class="project-tech">
+                            <li>Java</li>
+                            <li>JDBC</li>
+                            <li>SQL</li>
+                            <li>OOP</li>
+                            <li>Eclipse</li>
+                        </ul>
+
+                        <div class="project-actions">
+                            <a href="https://github.com/VaibhavChougule236/Bank-Management-System" target="_blank"
+                                class="project-link">
+                                View Code
+                            </a>
+
+                        </div>
+
+
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= ACHIEVEMENTS ================= -->
+        <section id="achievements">
+            <div class="projects-wrapper">
+                <div class="projects-header">
+                    <h2 class="section-title">Achievements</h2>
+                    <p>
+                        Measurable accomplishments that reflect consistency,
+                        problem-solving ability, and competitive programming strength.
+                    </p>
+                </div>
+
+                <div class="projects-grid">
+
+                    <article class="project-card">
+                        <h3>DSA & Competitive Programming</h3>
+                        <p>
+                            Solved 500+ Data Structures & Algorithms problems across
+                            LeetCode and GeeksforGeeks.
+                        </p>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>HackerRank – Java</h3>
+                        <p>
+                            Earned 5-star rating in Java on HackerRank,
+                            demonstrating strong Core Java and OOP skills.
+                        </p>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>University Rank – GFG</h3>
+                        <p>
+                            Achieved University Rank 12 on GeeksforGeeks leaderboard.
+                        </p>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>Coding Competitions</h3>
+                        <p>
+                            1st place in college coding contest and
+                            2nd place in national tech fest (300+ participants).
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= CONTACT ================= -->
+        <section id="contact">
+            <!-- Contact section: -->
+            <div class="contact-wrapper">
+
+                <div class="contact-header">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p>
+                        Whether it’s a full-time role, internship opportunity, collaboration,
+                        or technical discussion — I’m always open to meaningful conversations.
+                    </p>
+                </div>
+
+                <div class="contact-surface">
+
+                    <div class="contact-direct">
+
+                        <div class="contact-card">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <span>Email</span>
+                                <a href="mailto:vaibhavchougule236@gmail.com">
+                                    vaibhavchougule236@gmail.com
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <i class="fa-solid fa-phone"></i>
+                            <div>
+                                <span>Phone</span>
+                                <a href="tel:+918010625721">
+                                    +91 80106 25721
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <div>
+                                <span>WhatsApp</span>
+                                <a href="https://wa.me/918010625721" target="_blank">
+                                    Message directly
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="contact-links">
+                            <a href="https://github.com/vaibhavchougule236" target="_blank">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/vaibhavchougule124/" target="_blank">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://x.com/VaibhavC124" target="_blank">
+                                <i class="fa-brands fa-x-twitter"></i>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <form class="contact-form" id="contact-form">
+
+                        <input type="text" name="from_name" placeholder="Your Name" required>
+                        <input type="email" name="from_email" placeholder="Your Email" required>
+                        <input type="text" name="subject" placeholder="Subject" required>
+                        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+
+                        <button type="submit" class="btn-primary">
+                            Send Message
+                        </button>
+
+                    </form>
+
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+    </main>
+    <footer class="site-footer">
+        <div class="footer-wrapper">
+
+            <div class="footer-brand">
+                <h3>Vaibhav Chougule</h3>
+                <p>
+                    Java Full Stack Engineer focused on building scalable,
+                    secure, and production-grade systems.
+                </p>
+            </div>
+
+            <div class="footer-nav">
+                <span>Navigate</span>
+                <a href="#hero">About Me</a>
+                <a href="#projects">Projects</a>
+                <a href="#achievements">Achievements</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+            <div class="footer-social">
+                <span>Connect</span>
+                <div class="social-links">
+                    <a href="https://github.com/vaibhavchougule236" target="_blank">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/vaibhavchougule124/" target="_blank">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://x.com/VaibhavC124" target="_blank">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>© <span id="year"></span> Vaibhav Chougule</span>
+            <span>Built with care & engineering discipline</span>
+        </div>
+    </footer>
+
+
+
 </body>
+
 </html>
